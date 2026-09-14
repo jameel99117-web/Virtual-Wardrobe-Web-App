@@ -235,7 +235,7 @@ function CreateOutfit() {
                     {selectedClothesObjects.map((item) => (
                       <div key={item._id} className="selected-item-pill glass-panel">
                         <img 
-                          src={`${BACKEND_URL}${item.imageURL}`} 
+                          src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``} 
                           alt={item.name} 
                           className="selected-item-thumb"
                         />
@@ -314,7 +314,7 @@ function CreateOutfit() {
                       >
                         <div className="selectable-img-wrap">
                           <img
-                            src={`${BACKEND_URL}${item.imageURL}`}
+                            src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``}
                             alt={item.name}
                             className="selectable-img"
                           />
