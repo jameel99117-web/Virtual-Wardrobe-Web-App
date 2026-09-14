@@ -12,7 +12,7 @@ import {
   Share2
 } from "lucide-react";
 
-const BACKEND_URL = "https://ilham7898.vercel.app";
+const BACKEND_URL = "https://wardrobe-j46j-vert.vercel.app";
 
 function OutfitDetail() {
   const { state: outfit } = useLocation();

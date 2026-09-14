@@ -8,7 +8,7 @@ const WardrobeItem = ({ item }) => {
   return (
     <div className="wardrobe-card">
       <div className="image-container">
-        <img src={`https://ilham7898.vercel.app${imageURL}`} alt={item.name || "Wardrobe Item"} />
+        <img src={`https://wardrobe-j46j-vert.vercel.app${imageURL}`} alt={item.name || "Wardrobe Item"} />
       </div>
       <div className="item-info">
         <h4>{item.name || "Unnamed Item"}</h4>

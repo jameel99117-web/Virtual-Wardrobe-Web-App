@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { Sparkles, Eye, EyeOff, Lock, Mail, ArrowRight, ShieldCheck } from 'lucide-react';
 
-const BACKEND_URL = "https://ilham7898.vercel.app";
+const BACKEND_URL = "https://wardrobe-j46j-vert.vercel.app";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
