@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 👗 Virtual Wardrobe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web app for digitizing your closet — catalog your clothes, build outfits, plan them on a calendar, and get outfit suggestions based on the weather.
 
-## Available Scripts
+🔗 **Live App:** [wardrobe-j46j-vert.vercel.app](https://wardrobe-j46j-vert.vercel.app/)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **Wardrobe Management** — Add, edit, and organize clothing items with photos, categories, colors, and tags (e.g. top, bottom, shoes, outerwear, accessories).
+- **Outfit Builder** — Combine pieces from your wardrobe into saved outfits.
+- **Calendar Planning** — Assign outfits to specific dates so you know what you're wearing in advance (or look back at outfit history).
+- **Weather-Based Suggestions** — Get outfit recommendations pulled from your wardrobe based on the current or forecasted weather (temperature, rain, wind, season).
+- **Search & Filter** — Quickly find items or outfits by category, color, season, or tag.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧱 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Layer          | Tech                                             |
+|----------------|---------------------------------------------------|
+| Frontend       | React (JSX components, React Router)              |
+| Backend        | Node.js/Express (`backend/`)                      |
+| Auth           | Token-based auth (`setAuthToken.js`, `PrivateRoute.js`) |
+| Deployment     | Vercel                                            |
+| Weather Data   | Weather API (e.g. OpenWeatherMap) — for outfit suggestions |
 
-### `npm test`
+> Update the Database and Image Storage rows below to match what your `backend/` actually uses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Database       | *(add: PostgreSQL / MongoDB / etc.)*             |
+| Image Storage  | *(add: Cloudinary / S3 / local)*                 |
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Virtual-Wardrobe/
+├── backend/                    # Backend server (API, DB models, auth)
+├── build/                      # Production build output
+├── public/                     # Static assets
+├── src/
+│   ├── components/
+│   │   ├── AddItem.jsx         # Form to add a new garment to the wardrobe
+│   │   ├── CreateOutfit.jsx    # Combine items into a new outfit
+│   │   ├── Dashboard.jsx       # Main dashboard / overview
+│   │   ├── HomePage.jsx        # Landing page
+│   │   ├── Login.js            # Login form
+│   │   ├── MyOutfits.js        # List of saved outfits
+│   │   ├── Navbar.js           # Top navigation
+│   │   ├── OutfitDetail.js     # Single outfit detail view (garment gallery + info)
+│   │   ├── PrivateRoute.js     # Route guard for authenticated pages
+│   │   ├── Signup.js           # Signup form
+│   │   └── Wardrobeltem.jsx    # Single wardrobe item card
+│   ├── utils/
+│   │   └── setAuthToken.js     # Attaches/removes auth token on requests
+│   ├── App.js                  # Root component
+│   ├── AppRouter.jsx           # App route definitions
+│   ├── index.css               # Global styles
+│   └── index.js                # Entry point
+├── .env                        # Environment variables
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── vercel.json                 # Vercel deployment config
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (v18+)
+- A database instance (PostgreSQL/MongoDB)
+- An API key from a weather provider (e.g. [OpenWeatherMap](https://openweathermap.org/api))
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/your-username/virtual-wardrobe.git
+cd virtual-wardrobe
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a `.env` file based on `.env.example`:
 
-## Learn More
+```env
+DATABASE_URL=your_database_connection_string
+WEATHER_API_KEY=your_weather_api_key
+IMAGE_UPLOAD_KEY=your_image_storage_key
+NEXTAUTH_SECRET=your_auth_secret
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run dev
+```
 
-### Code Splitting
+Visit `http://localhost:3000` in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🧠 How It Works
 
-### Analyzing the Bundle Size
+### Adding Items
+Upload a photo of a clothing piece and tag it with category, color, season, and warmth level (e.g. light, medium, heavy).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Building Outfits
+Select multiple items from your wardrobe and save them as a named outfit (e.g. "Casual Friday", "Rainy Commute").
 
-### Making a Progressive Web App
+### Calendar Assignment
+Drag (or select) an outfit onto a calendar date to plan what you'll wear ahead of time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Weather-Based Suggestions
+The app fetches the forecast for a chosen date/location and filters your wardrobe/outfits by:
+- Temperature range → matches item warmth level
+- Precipitation → prioritizes waterproof/rain-friendly items, deprioritizes suede/delicate fabrics
+- Wind → suggests windbreakers/jackets when applicable
+- Season tags → filters seasonally appropriate pieces
 
-### Advanced Configuration
+If no saved outfit fits well, it suggests a fresh combination from individual items matching the conditions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📄 License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License — feel free to use and modify.
