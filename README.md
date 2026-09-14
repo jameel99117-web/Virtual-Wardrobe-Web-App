@@ -12,6 +12,20 @@ A web app for digitizing your closet — catalog your clothes, build outfits, pl
 - **Weather-Based Suggestions** — Get outfit recommendations pulled from your wardrobe based on the current or forecasted weather (temperature, rain, wind, season).
 - **Search & Filter** — Quickly find items or outfits by category, color, season, or tag.
 
+  ## 📸 Screenshots
+
+### Home
+![Home](screenshots/vestir-home.png)
+
+### Dashboard
+![Dashboard](screenshots/vestir-dashboard.png)
+
+### Add Wardrobe Piece
+![Add Piece](screenshots/vestir-add-piece.png)
+
+### Lookbook
+![Lookbook](screenshots/vestir-lookbook.png)
+
 ## 🧱 Tech Stack
 
 | Layer          | Tech                                             |
