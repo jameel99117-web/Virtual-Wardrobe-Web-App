@@ -57,8 +57,8 @@ function OutfitDetail() {
               {outfit.items?.map((item, index) => (
                 <div key={item._id || index} className="garment-card glass-panel">
                   <div className="garment-img-wrap">
-                    <img 
-                      src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``}
+                    <img
+                     src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
                       alt={item.name}
                       className="garment-img"
                     />

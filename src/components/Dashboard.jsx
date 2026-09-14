@@ -396,8 +396,8 @@ function Dashboard() {
                   {weatherSuggestedOutfit.items?.slice(0, 3).map((item) => (
                     <img 
                       key={item._id} 
-                      src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``} 
-                      alt={item.name} 
+                      src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
+                      alt={item.name}   
                       className="suggested-mini-img"
                     />
                   ))}
@@ -504,7 +504,7 @@ function Dashboard() {
                   {assignedOutfit.items?.slice(0, 4).map((item) => (
                     <div key={item._id} className="assigned-item-box">
                       <img 
-                        src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``} 
+                       src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
                         alt={item.name} 
                         className="assigned-item-img"
                       />
@@ -605,7 +605,7 @@ function Dashboard() {
                         {outfit.items?.slice(0, 4).map((item) => (
                           <div key={item._id} className="collage-cell">
                             <img 
-                              src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``} 
+                         src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
                               alt={item.name} 
                               className="collage-img"
                             />
@@ -674,7 +674,7 @@ function Dashboard() {
                 <div key={item._id} className="closet-item-card glass-panel">
                   <div className="item-img-wrap">
                     <img 
-                      src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``} 
+              src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
                       alt={item.name} 
                       className="item-img"
                     />

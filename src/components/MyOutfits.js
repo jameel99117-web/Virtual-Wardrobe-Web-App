@@ -256,7 +256,7 @@ function MyOutfits() {
                     {outfit.items?.slice(0, 4).map((item) => (
                       <div key={item._id} className="item-cell">
                         <img 
-                          src={`item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}``}
+                         src={item.imageURL?.startsWith('http') ? item.imageURL : `${BACKEND_URL}${item.imageURL}`}
                           alt={item.name}
                           className="item-cell-img"
                         />
